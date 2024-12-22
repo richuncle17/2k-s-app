@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Added Bootstrap for better responsiveness -->
+    ...
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!-- Ensures proper scaling on mobile devices -->
+    ...
+    <title>2k`s App</title>
+    <style>
+        /* Added styles for responsiveness */
+        .container {
+            display: flex;
+            flex-direction: column; /* Stack elements vertically on small screens */
+            align-items: center;
+        }
+        .left-section, .right-section {
+            width: 100%; /* Full width on small screens */
+            max-width: 600px; /* Limit max width for larger screens */
+        }
+        img {
+            max-width: 100%; /* Make images responsive */
+            height: auto; /* Maintain aspect ratio */
+        }
+        /* Additional styles can be added for better mobile experience */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <div class="image-container">
+                <img id="displayedImage" src="placeholder.jpg" alt="Selected Image">
+            </div>
+        </div>
+        
+        <div class="right-section">
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <div class="heading">
+                        <input type="text" id="nameInput" placeholder="Enter FAMILY NAME "> </div>
+                    <button id="prevMonth">&lt;</button>
+                    <h2 id="monthDisplay"></h2>
+                    <button id="nextMonth">&gt;</button>
+                </div>
+                <div class="calendar-grid" id="calendarGrid"></div>
+                <div class="event-names" id="eventNames"></div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="button-group">
+                <input type="file" id="imageInput" accept="image/*" hidden>
+                <button onclick="document.getElementById('imageInput').click()">Add Picture</button>
+                <button id="saveButton">Save Picture</button>
+                <button id="deleteButton">Delete Picture</button>
+            </div>
+
+            <div class="search-group">
+                <input type="text" id="nameInput" placeholder="Enter name">
+                <input type="date" id="dateInput">
+                <button id="addBirthdayButton">Add Birthday</button>
+            </div>
+
+            <div class="search-delete-group">
+                <input type="text" id="searchInput" placeholder="Search name">
+                <button id="searchButton">Search</button>
+                <button id="deleteNameButton">Delete Name</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
